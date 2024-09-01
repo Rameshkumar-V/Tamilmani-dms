@@ -282,7 +282,16 @@ def logout():
     logout_user()
     return redirect(url_for('home')) 
 
-
+@app.route('/settup')
+def settup():
+    with app.app_context():
+        db.create_all()
+        print("Database Created Successfully")
+        if not User.query.filter_by(username='tm').first():
+            new_user = User(username=os.getenv('ADMIN_USERNAME'), password = generate_password_hash(os.getenv('ADMIN_PASSWORD')))
+            db.session.add(new_user)
+            db.session.commit()
+    return "Success"
 
 if __name__ == '__main__':
     with app.app_context():
