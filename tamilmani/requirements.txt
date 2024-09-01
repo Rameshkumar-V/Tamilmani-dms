@@ -50,3 +50,4 @@ WTForms==3.1.2
 gunicorn
 psycopg2-binary==2.9.3
 flask_login
+flask_wtf
