@@ -1,0 +1,9 @@
+{% extends 'admin/base.html' %}
+
+{% block body %}
+    {{ super() }}
+    <!-- Add your logout button here -->
+    <div class="container">
+        <a href="{{ url_for('logout') }}" class="btn btn-danger">Logout</a>
+    </div>
+{% endblock %}

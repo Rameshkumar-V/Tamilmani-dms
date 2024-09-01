@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profiles</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="profile-start">
+            <div>
+                <h2>Profiles</h2>
+            </div>
+        </div>
+        {% for profile in profiles %}
+        <div class="profile-section">
+         <h3>{{ profile.title }}</h3>
+            <!-- Loop through each line in profile.detail -->
+             <ul>
+            {% for line in profile.detail %}
+           
+            <li><p>{{ line }}</p></li>
+            {% endfor %}
+        </ul>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

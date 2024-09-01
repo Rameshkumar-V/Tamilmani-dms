@@ -1,0 +1,22 @@
+<div class="container" id="document">
+    <h2 class="text-center mt-5 mb-5">RESOURCES</h2>
+    <div class="row row-cols-1 row-cols-md-2 align-items-center p-1">
+        {% if categories %}
+            {% for category in categories %}
+                <div class="
+                p-1
+                rounded
+                border  border-seconday
+                text-seconday
+                text-center">
+                    <p class="text-md">{{ category.category }}</p>
+                    <a href="{{ url_for('download_page', category_id=category.c_id) }}"
+                     class="btn btn-primary btn-sm ">See Page</a>
+                </div>
+
+            {% endfor %}
+        {% else %}
+            <p class="text-center text-warning">No resource currently available.</p>
+        {% endif %}
+    </div>
+</div>

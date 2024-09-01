@@ -1,0 +1,32 @@
+
+
+.pdfs {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.pdf-details {
+    margin-top: 10px;
+}
+.pdf-photo img {
+    max-width: 100px;
+    border-radius: 5px;
+}
+.name {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.pdf-details a h4 {
+    color: #f3f5f6;
+    display: inline-block;
+    
+    background-color: #0b81ff;
+    border-radius: 5px;
+    padding:  10px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.pdf-details h4:hover {
+    color: #0056b3;
+}

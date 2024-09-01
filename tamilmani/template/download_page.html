@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Page</title>
+    
+    <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="#">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/download_page.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/pagination.css') }}">
+    <script src="https://unpkg.com/htmx.org@1.6.1"></script>
+
+</head>
+<body>
+    <!-- download_page.html -->
+
+
+
+<form class="search-form " id="search-form" hx-get="{{ url_for('search_documents') }}" hx-target="#results" hx-swap="innerHTML">
+    <!-- <label for="search">Search:</label> -->
+    <input type="text" id="search" name="q" placeholder="Enter search term" class="search-input">
+    <input type="text" name="category_id" hidden>
+    <button type="submit" class="search-button">Search</button>
+</form>
+<!-- Display search results -->
+<div id="results"></div>
+
+
+
+
+<!-- Display documents -->
+<div  id="documentContainer">
+
+    {% for document in documents %}
+
+    <div class="pdf">
+        
+        <div class="pdf-details">
+            <h4 class="name">{{ document.document_filename }}</h4>
+            <h4> <a href="/get_document?document_id={{document.id}}">Download</a></h4>
+        </div>
+    </div>
+
+    {% endfor %}
+
+</div>
+
+
+
+
+
+
+<!-- PAGINATION PAGE -->
+{% include "pagination.html" %}
+

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Page</title>
+    
+    <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="#">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/download_page.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/pagination.css') }}">
+    <script src="https://unpkg.com/htmx.org@1.6.1"></script>
+
+</head>
+<body>
+    <!-- download_page.html -->
+
+
+
+<form class="search-form " id="search-form" hx-get="{{ url_for('youtube_search') }}" hx-target="#results" hx-swap="innerHTML">
+    <!-- <label for="search">Search:</label> -->
+    <input type="text" id="search" name="q" placeholder="Enter search term" class="search-input">
+
+    <button type="submit" class="search-button">Search</button>
+</form>
+<!-- Display search results -->
+<div id="results"></div>
+
+
+
+
+<!-- Display documents -->
+<div  id="documentContainer" class="justify-content-center align-items-center">
+
+    {% for document in documents %}
+
+    <div class="container
+         ">
+        
+       
+        <div class="row row-cols-1 row-cols-md-2 align-items-center  p-1">
+    
+               
+                
+                <div style="display:flex;justify-content:center;align-items:center;">
+    
+          
+                <iframe  class="img-thumnail rounded " src={{document.url}} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                
+                </div>
+        <div class="container" style="display:flex;justify-content:center;align-items:center;">
+            <h2 class="text-center mt-5 text-wrap">{{document.title}}</h2>
+          </div>
+          
+        </div>
+      </div>
+
+    {% endfor %}
+
+</div>
+
+
+
+
+
+
+<!-- PAGINATION PAGE -->
+{% include "pagination_for_youtube.html" %}
+

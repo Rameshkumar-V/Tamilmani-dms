@@ -1,0 +1,28 @@
+
+<!-- Display documents -->
+<div  id="documentContainer">
+
+    {% for document in documents %}
+
+    <div class="container">
+        <h2 class="text-center mt-5">SOURCES</h2>
+        <div class="row row-cols-1 row-cols-md-2 align-items-center p-1">
+    
+               
+                
+                <div class="col 
+                p-1      
+                rounded
+                text-seconday
+                text-center">
+    
+                <p>{{document.title}}</p>
+                <iframe  class="img-fluid rounded" src={{document.url}} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                
+        </div>
+        </div>
+      </div>
+
+    {% endfor %}
+
+</div>

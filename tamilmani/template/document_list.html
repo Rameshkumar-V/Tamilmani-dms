@@ -1,0 +1,27 @@
+
+<div  id="documentContainer">
+
+
+    {% if documents %}
+    <h4>Search results</h4>
+
+    {% for document in documents %}
+
+    <div class="pdf">
+        
+        <div class="pdf-details">
+            <h4 class="name">{{ document.document_filename }}</h4>
+            <h4> <a href="/get_document?document_id={{document.id}}">Download</a></h4>
+        </div>
+    </div>
+
+    {% endfor %}
+
+
+    {% else %}
+    <h4>No document found</h4>
+    {% endif %}
+
+</div>
+
+

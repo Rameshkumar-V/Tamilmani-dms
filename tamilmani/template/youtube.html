@@ -1,0 +1,28 @@
+<div class="container">
+    <h2 class="text-center mt-5">SOURCES</h2>
+    
+    <div class="row row-cols-1 row-cols-md-2 align-items-center p-1">
+        {% for document in youtube %}
+            <div class="col 
+                    p-1      
+                    rounded
+                    text-seconday
+                    text-center">
+
+                    <iframe  class="img-fluid rounded" src={{document.url}}  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <p class="text-secondary">{{document.title}}</p>
+                    
+            </div> 
+        {% endfor %}
+    </div>
+    
+
+    <div class="row row-cols-1 align-items-center mt-5 mb-5">
+        <a class="btn btn-outline-dark btn-sm col-md-6 col-10 mx-auto" href="{{url_for('youtube_page')}}" role="button">More Youtube Videos</a>
+    </div>
+
+   
+  
+    
+
+  </div>

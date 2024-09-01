@@ -1,0 +1,19 @@
+<div class="container ">
+    
+    <div class="row">
+        <div class="col">
+            <h2 class="text-center mb-4 mt-4">CONTACT</h2>
+            <table class="table table-borderless ">
+                
+                {% for contact in contact %}
+                <tr>
+                    <th scope="col" class="text-center text-secondary">{{ contact.app_name }}</th>
+                    <th scope="col" class="text-center"> <a href="{{ contact.link }}" target="_blank" class="btn btn-primary btn-sm ">Visit</a>
+                    </th>
+                </tr>
+               
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</div>

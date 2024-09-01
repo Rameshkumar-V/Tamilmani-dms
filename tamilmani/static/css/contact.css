@@ -1,0 +1,41 @@
+/* static/css/contact.css */
+#contact-section .contact-section {
+    background-color: #f9f9f9;
+    padding: 50px 0;
+}
+
+#contact-section .content-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#contact-section table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+}
+
+#contact-section td {
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+#contact-section button {
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#contact-section button a {
+    color: #fff;
+    text-decoration: none;
+}
+
+#contact-section button:hover {
+    background-color: #0056b3;
+}
