@@ -5,7 +5,7 @@ from datetime import timedelta
 import os
 import json
 # Initialize Firebase Admin SDK
-cred = credentials.Certificate("secretkey.json")
+cred = credentials.Certificate(json.loads(os.getenv('FIREBASE_SECRET_KEY')))
 firebase_admin.initialize_app(cred, {
     "storageBucket": "flask-test-3d74a.appspot.com"
 })
