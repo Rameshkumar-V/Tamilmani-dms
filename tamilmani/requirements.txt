@@ -1,3 +1,4 @@
+psycopg2-binary
 blinker==1.8.2
 CacheControl==0.14.0
 cachetools==5.5.0
